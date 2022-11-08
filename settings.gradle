@@ -1,0 +1,3 @@
+rootProject.name = "Metronome"
+include ':app'
+include ':floatwindow'

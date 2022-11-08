@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor">
+
+    <ImageView
+        android:id="@+id/ivLargeReduce"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/metronome_large_reduce_icon"
+        app:layout_constraintEnd_toStartOf="@+id/tvSpeed"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="160"
+        android:textColor="@color/color_78bbe8"
+        android:textSize="50sp"
+
+        app:layout_constraintEnd_toStartOf="@+id/ivLargeAdd"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/ivLargeReduce"
+        app:layout_constraintTop_toTopOf="@+id/ivLargeReduce" />
+
+    <ImageView
+        android:id="@+id/ivLargeAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/metronome_large_add_icon"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tvSpeed"
+        app:layout_constraintTop_toTopOf="@+id/tvSpeed" />
+
+
+    <com.daomingedu.metronome.widget.ArcProgress
+        android:id="@+id/arcSpeedProgress"
+        android:layout_width="200dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="40dp"
+        app:arc_finished_color="@color/color_78bbe8"
+        app:arc_max="360"
+        app:arc_progress="160"
+        app:arc_stroke_width="10dp"
+        app:arc_text_color="@color/color_f89412"
+        app:arc_text_size="50sp"
+        app:arc_unfinished_color="@color/color_969696"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeed" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="上下滑动调节"
+        android:textSize="15sp"
+        android:textColor="@color/color_78bbe8"
+        app:layout_constraintBottom_toBottomOf="@+id/arcSpeedProgress"
+        app:layout_constraintEnd_toEndOf="@+id/arcSpeedProgress"
+        app:layout_constraintStart_toStartOf="@+id/arcSpeedProgress" />
+
+    <LinearLayout
+        android:id="@+id/llBeatContainer"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/arcSpeedProgress">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/beat_blue_icon1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/beat_white_icon2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/beat_white_icon2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:src="@drawable/beat_white_icon2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llControlOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/arcSpeedProgress"
+        app:layout_constraintTop_toBottomOf="@+id/tvSpeed">
+
+        <ImageView
+            android:id="@+id/ivReduceBeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/metronome_small_reduce_icon" />
+
+        <ImageView
+            android:id="@+id/ivAddBeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/metronome_small_add_icon" />
+
+        <TextView
+            android:id="@+id/tvTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4/8"
+            android:textColor="@color/color_78bbe8"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/ivReduceBeat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/metronome_small_reduce_icon" />
+
+        <ImageView
+            android:id="@+id/ivAddBeat2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/metronome_small_add_icon" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivPlayOrPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/metronome_play_icon"
+        app:layout_constraintStart_toStartOf="@+id/llControlOptions"
+        app:layout_constraintTop_toBottomOf="@+id/llControlOptions" />
+</androidx.constraintlayout.widget.ConstraintLayout>
